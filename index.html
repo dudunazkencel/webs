@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dudunaz Kençel | Portfolyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Bahar Teması ve Kodlama Renk Paleti */
+        :root {
+            --bahar-pembe: #ffb7c5; /* Çiçek rengi */
+            --bahar-yesil: #a8dadc; /* Taze yaprak rengi */
+            --kod-yesil: #2a9d8f;   /* Kod vurgu rengi */
+            --yazi-renk: #333;
+            --arka-plan: #fdfcf0;   /* Krem */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--arka-plan);
+            color: var(--yazi-renk);
+            line-height: 1.6;
+        }
+
+        /* Arka Plan Çiçek ve Kod Efektleri */
+        body::before {
+            content: "🌸 { code }"; position: fixed; top: 10%; left: 5%; font-size: 1.2rem; opacity: 0.2; color: var(--bahar-pembe);
+        }
+        body::after {
+            content: "🌼 💻"; position: fixed; bottom: 10%; right: 5%; font-size: 1.5rem; opacity: 0.2; color: var(--bahar-yesil);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--bahar-pembe), var(--bahar-yesil));
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            border-bottom: 8px solid white;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+        }
+
+        header p {
+            font-weight: 300;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.07);
+            border-left: 10px solid var(--bahar-pembe);
+            position: relative;
+        }
+
+        h2 {
+            color: #d87093;
+            border-bottom: 2px dashed var(--bahar-yesil);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        /* Profil Fotoğrafı Stili */
+        .profil-resmi {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* Yuvarlak yap */
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            object-fit: cover; /* Resmi sığdır */
+            position: absolute;
+            top: -90px;
+            right: 40px;
+            background: white; /* Resim yüklenmezse arka plan */
+        }
+
+        /* Mobilde profil resmini ayarla */
+        @media (max-width: 768px) {
+            .profil-resmi {
+                position: relative;
+                top: 0;
+                right: 0;
+                display: block;
+                margin: 0 auto 1.5rem auto;
+            }
+            header h1 { font-size: 3rem; }
+        }
+
+        .hobi-etiket {
+            display: inline-block;
+            background: #e0f7f8;
+            color: var(--kod-yesil);
+            padding: 8px 18px;
+            border-radius: 20px;
+            margin: 8px 5px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Oyunlar Bölümü Kartları */
+        .oyun-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .oyun-kart {
+            background: #fffafa;
+            border: 2px solid var(--bahar-pembe);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .oyun-kart:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(216, 112, 147, 0.2);
+        }
+
+        .oyun-kart h3 {
+            color: #d87093;
+            margin-top: 0;
+        }
+
+        .btn-incele {
+            background: linear-gradient(to right, var(--bahar-pembe), #ff9a9e);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-incele:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.9rem;
+            color: #666;
+            background: #f1f1f1;
+            margin-top: auto;
+        }
+        
+        .code-text {
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--kod-yesil);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dudunaz Kençel</h1>
+    <p>Nene Hatun MTAL 11. Sınıf | &lt; Genç Yazılımcı /&gt;</p>
+</header>
+
+<div class="container">
+    
+    <div class="section" style="margin-top: 60px;"> <img src="dudunaz-profil.jpg" alt="Dudunaz Kençel Profil Fotoğrafı" class="profil-resmi">
+        
+        <h2>Merhaba, Dünya! 🌸</h2>
+        <p>Ben Dudunaz. Antalya'nın Korkuteli ilçesinde yaşıyorum. Teknolojinin çiçek açtığı bu dönemde, <span class="code-text">Nene Hatun MTAL</span> 11. sınıf öğrencisi olarak kodların büyülü dünyasını keşfediyorum. Doğayı severim, ama bilgisayar ekranındaki satırların düzenini de bir o kadar büyüleyici buluyorum.</p>
+        
+        <div style="margin-top: 1rem;">
+            <span class="hobi-etiket">📚 Kitap Okumak</span>
+            <span class="hobi-etiket">🎧 Müzik & Podcast</span>
+            <span class="hobi-etiket">🌳 Doğa Yürüyüşü</span>
+            <span class="hobi-etiket">💻 Oyun Geliştirme</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Projelerim & Geliştirdiğim Oyunlar 🎮</h2>
+        <div class="oyun-container">
+            <div class="oyun-kart">
+                <h3>Bahar Macerası</h3>
+                <p>Kendi yaptığım platform oyunum. Çiçekleri toplayıp kod bloklarını çözerek ilerliyorsunuz.</p>
+                <p class="code-text" style="font-size:0.8rem;">#Unity #CSharp</p>
+                <button class="btn-incele">Oyna/İncele</button>
+            </div>
+            <div class="oyun-kart">
+                <h3>Korkuteli Bulmacası</h3>
+                <p>Yaşadığım şehri tanıtan, Python ile yazdığım basit bir metin tabanlı bulmaca oyunu.</p>
+                <p class="code-text" style="font-size:0.8rem;">#Python #Kodlama</p>
+                <button class="btn-incele">Kodu Gör</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>İletişim 📫</h2>
+        <p>Projelerim hakkında konuşmak, kod paylaşmak veya sadece bahar havasından bahsetmek istersen beni Korkuteli Nene Hatun MTAL'de bulabilirsin!</p>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 Dudunaz Kençel - Çiçek Açan Kodlar Portfolyosu
+</footer>
+
+</body>
+</html>
