@@ -46,13 +46,13 @@
 
         /* Başlıklar */
         h1 {
-<img src="profil.png" alt="Dudu Naz Kençel" class="profile-img">
+
             font-family: 'Dancing Script', cursive;
             color: #d8819d;
             font-size: 3rem;
             margin-bottom: 10px;
         }
-
+<img src="profil.png" alt="Dudu Naz Kençel" class="profile-img">
         h2 {
             color: #6b8e23;
             border-bottom: 2px solid #d8819d;
